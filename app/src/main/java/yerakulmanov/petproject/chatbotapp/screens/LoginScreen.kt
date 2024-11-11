@@ -26,7 +26,7 @@ import androidx.compose.ui.unit.dp
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun LoginScreen(
-
+    onNavigateToSignUp: () -> Unit
 ) {
     var email by remember { mutableStateOf("") }
     var password by remember {
@@ -77,5 +77,5 @@ fun LoginScreen(
 @Preview
 @Composable
 fun LoginPreview() {
-    LoginScreen()
+    LoginScreen(onNavigateToSignUp = {})
 }

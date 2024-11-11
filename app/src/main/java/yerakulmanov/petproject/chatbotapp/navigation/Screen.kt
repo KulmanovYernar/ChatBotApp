@@ -1,4 +1,4 @@
-package yerakulmanov.petproject.chatbotapp.destinations
+package yerakulmanov.petproject.chatbotapp.navigation
 
 sealed class Screen(val route: String) {
     object LoginScreen : Screen("login_screen")
