@@ -52,8 +52,11 @@ fun ChatScreen(
                 .padding(bottom = 24.dp)
         ) {
             items(messages) { message ->
-                ChatMessageItem(message =  message.copy(isSentByCurrentUser
-                = message.senderId == messageViewModel.currentUser.value?.email)
+                ChatMessageItem(
+                    message = message.copy(
+                        isSentByCurrentUser
+                        = message.senderId == messageViewModel.currentUser.value?.email
+                    )
                 )
             }
         }
@@ -81,7 +84,7 @@ fun ChatScreen(
                         messageViewModel.sendMessage(text.value.trim())
                         text.value = ""
                     }
-
+                        messageViewModel.loadMessages()
                 }
             ) {
                 Icon(imageVector = Icons.AutoMirrored.Filled.Send, contentDescription = "Send")
