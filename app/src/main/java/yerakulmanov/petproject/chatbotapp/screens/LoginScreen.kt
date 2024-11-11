@@ -1,5 +1,6 @@
 package yerakulmanov.petproject.chatbotapp.screens
 
+import android.util.Log
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -66,13 +67,15 @@ fun LoginScreen(
         Button(
             onClick = {
                 authViewModel.login(email, password)
+                Log.d("Result1", "LoginScreen: $result")
                 when (result) {
                     is ResultEvent.Success -> {
+                        Log.d("Result1", "Success: $result")
                         onSignInSuccess()
                     }
 
                     is ResultEvent.Error -> {
-
+                        Log.d("Result1", "Error: $result")
                     }
 
                     else -> {
