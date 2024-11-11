@@ -25,14 +25,16 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
+import yerakulmanov.petproject.chatbotapp.data.Room
 import yerakulmanov.petproject.chatbotapp.ui_components.RoomItem
 import yerakulmanov.petproject.chatbotapp.viewmodels.RoomViewModel
 
 @Composable
 fun ChatRoomListScreen(
-    charRoomViewModel: RoomViewModel = viewModel()
+    onJoinClicked: (Room) -> Unit,
+    chatRoomViewModel: RoomViewModel = viewModel()
 ) {
-    val rooms by charRoomViewModel.rooms.observeAsState(emptyList())
+    val rooms by chatRoomViewModel.rooms.observeAsState(emptyList())
 
 
     var showDialog by remember {
@@ -53,8 +55,9 @@ fun ChatRoomListScreen(
 
         // Display a list of chat rooms
         LazyColumn {
-            items(rooms){ room ->
-                RoomItem(room = room)
+            items(rooms) { room ->
+                RoomItem(room = room,
+                    onJoinClicked = onJoinClicked)
             }
         }
 
@@ -94,7 +97,7 @@ fun ChatRoomListScreen(
                         onClick = {
                             if (name.isNotBlank()) {
                                 showDialog = false
-
+                                chatRoomViewModel.createRoom(name)
                             }
                         }
                     ) {

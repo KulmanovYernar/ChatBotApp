@@ -14,7 +14,10 @@ import androidx.compose.ui.unit.sp
 import yerakulmanov.petproject.chatbotapp.data.Room
 
 @Composable
-fun RoomItem(room: Room) {
+fun RoomItem(
+    room: Room,
+    onJoinClicked: (Room) -> Unit
+) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -23,7 +26,7 @@ fun RoomItem(room: Room) {
     ) {
         Text(text = room.name, fontSize = 16.sp, fontWeight = FontWeight.Normal)
         OutlinedButton(
-            onClick = {  }
+            onClick = { onJoinClicked(room) }
         ) {
             Text("Join")
         }

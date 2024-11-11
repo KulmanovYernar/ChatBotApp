@@ -66,22 +66,7 @@ fun LoginScreen(
         )
         Button(
             onClick = {
-                authViewModel.login(email, password)
-                Log.d("Result1", "LoginScreen: $result")
-                when (result) {
-                    is ResultEvent.Success -> {
-                        Log.d("Result1", "Success: $result")
-                        onSignInSuccess()
-                    }
-
-                    is ResultEvent.Error -> {
-                        Log.d("Result1", "Error: $result")
-                    }
-
-                    else -> {
-                        Unit
-                    }
-                }
+                authViewModel.login(email, password, onSignInSuccess)
             },
             modifier = Modifier
                 .fillMaxWidth()
