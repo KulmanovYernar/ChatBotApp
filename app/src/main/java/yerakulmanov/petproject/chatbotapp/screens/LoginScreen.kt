@@ -69,7 +69,7 @@ fun LoginScreen(
         }
         Spacer(modifier = Modifier.height(16.dp))
         Text("Don't have an account? Sign up.",
-            modifier = Modifier.clickable { }
+            modifier = Modifier.clickable { onNavigateToSignUp() }
         )
     }
 }

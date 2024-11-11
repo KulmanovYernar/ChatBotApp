@@ -89,7 +89,7 @@ fun SignUpScreen(
         Text(
             "Already have an account? Sign in.",
             modifier = Modifier.clickable { //add navigation
-
+                onNavigateToLogin()
             }
         )
     }
