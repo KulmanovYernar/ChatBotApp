@@ -4,7 +4,8 @@ import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import yerakulmanov.petproject.chatbotapp.AuthViewModel
+import yerakulmanov.petproject.chatbotapp.screens.ChatRoomListScreen
+import yerakulmanov.petproject.chatbotapp.viewmodels.AuthViewModel
 import yerakulmanov.petproject.chatbotapp.screens.LoginScreen
 import yerakulmanov.petproject.chatbotapp.screens.SignUpScreen
 
@@ -31,6 +32,10 @@ fun NavigationGraph(
                     navController.navigate(Screen.ChatRoomsScreen.route)
                 }
             )
+        }
+
+        composable(Screen.ChatRoomsScreen.route){
+            ChatRoomListScreen()
         }
     }
 }

@@ -12,6 +12,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.rememberNavController
 import yerakulmanov.petproject.chatbotapp.navigation.NavigationGraph
 import yerakulmanov.petproject.chatbotapp.ui.theme.ChatBotAppTheme
+import yerakulmanov.petproject.chatbotapp.viewmodels.AuthViewModel
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

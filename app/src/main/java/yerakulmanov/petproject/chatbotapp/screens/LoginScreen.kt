@@ -21,8 +21,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
-import yerakulmanov.petproject.chatbotapp.AuthViewModel
-import yerakulmanov.petproject.chatbotapp.data.Result
+import yerakulmanov.petproject.chatbotapp.viewmodels.AuthViewModel
+import yerakulmanov.petproject.chatbotapp.data.ResultEvent
 
 @Composable
 fun LoginScreen(
@@ -37,7 +37,7 @@ fun LoginScreen(
         mutableStateOf("")
     }
 
-    val result by authViewModel.authResult.observeAsState()
+    val result by authViewModel.authResultEvent.observeAsState()
 
     Column(
         modifier = Modifier
@@ -67,11 +67,11 @@ fun LoginScreen(
             onClick = {
                 authViewModel.login(email, password)
                 when (result) {
-                    is Result.Success -> {
+                    is ResultEvent.Success -> {
                         onSignInSuccess()
                     }
 
-                    is Result.Error -> {
+                    is ResultEvent.Error -> {
 
                     }
 
