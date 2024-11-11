@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 import yerakulmanov.petproject.chatbotapp.Injection
-import yerakulmanov.petproject.chatbotapp.RoomRepository
+import yerakulmanov.petproject.chatbotapp.repository.RoomRepository
 import yerakulmanov.petproject.chatbotapp.data.ResultEvent
 import yerakulmanov.petproject.chatbotapp.data.Room
 

@@ -1,4 +1,4 @@
-package yerakulmanov.petproject.chatbotapp
+package yerakulmanov.petproject.chatbotapp.repository
 
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore

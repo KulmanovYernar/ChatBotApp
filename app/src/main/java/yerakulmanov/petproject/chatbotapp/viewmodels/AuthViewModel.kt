@@ -7,7 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.coroutines.launch
 import yerakulmanov.petproject.chatbotapp.Injection
-import yerakulmanov.petproject.chatbotapp.UserRepository
+import yerakulmanov.petproject.chatbotapp.repository.UserRepository
 import yerakulmanov.petproject.chatbotapp.data.ResultEvent
 
 class AuthViewModel : ViewModel() {
